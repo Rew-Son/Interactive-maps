@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+         <title>Gaz test</title>
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css" integrity="sha512-hoalWLoI8r4UszCkZ5kL8vayOGVae1oxXe/2A4AO6J9+580uKHDO3JdHb7NzwwzK5xr/Fs0W40kiNHxM9vyTtQ==" crossorigin="" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+      
+		<script src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js" integrity="sha512-BB3hKbKWOc9Ez/TAwyWxNXeoV9c1v6FIeYiBieIWkpLjauysF18NzgR1MBNBXf8/KABdlkX68nAhlwcDFLGPCQ==" crossorigin=""></script>
+         <style>
+        body {
+            margin: 10;
+            padding: 0;
+            background-image: url(images/images.jpg);
+            background-size:auto;
+            background-position: center;
+            font-family:sans-serif;
+        }
+       .form-box{
+                 width: 500px;
+                 background: rgba(0,0,0,0.8);
+                 margin: 12% auto;
+                 padding :50px 0;
+                 color: #fff;
+                 box-shadow: 0 0 20px 2px rgba(0,0,0,0.5);
+             }
+             
+        h1{
+                 text-align: center;
+                 margin-bottom: 40px;
+             }
+        .input-box{
+                 margin: 10%;
+                 width: 80%;
+                 border-bottom: 1px solid #fff;
+                 padding-top: 10px;
+                 padding-bottom: 5px;
+             }
+        .input-box input {
+                 width: 80%;
+                 border: none;
+                 outline: none;
+                 background: transparent;
+                 color: #fff;
+             }
+             ::placeholder{
+                 color: #ccc;
+             }
+             .fa{
+                 margin-right:  10px;
+             }
+             .eye {
+                 position: absolute;
+             }
+             #hide1{
+                 display: none;
+             }
+             .login-btn{
+                 text-align: center;
+                   border: 1px solid white;
+
+                padding: 10px 5px;
+
+                 margin: 10%;
+                 width: 80%;
+                 display: block ;
+                 outline:inherit;
+
+                 cursor: pointer;
+                 background: transparent;
+                 color: #fff;
+                 font-size:16px;
+             }
+             .login-btn:hover {
+              background: gray;
+              color: white;
+            }
+  
+		
+    </style>
+		<div class="coordinate" id="coordinate"></div>
+    </head>
+    <body>
+        <!-- login-->
+        <div class='form-box'>
+            <h1>Login Here</h1>
+            <div class='input-box'>
+                <i class="fa fa-envelope-o"></i>
+                <input type='email' placeholder='Email Id' id='email'> 
+            </div>
+             <div class='input-box'>
+                 <i class="fa fa-key"></i>
+                <input type='password' placeholder='Password' id='myInput'> 
+                 <span class="eye" onclick="myFunction()">
+                    <i id="hide1" class="fa fa-eye"></i>
+                    <i id="hide2" class="fa fa-eye-slash"></i>
+                     </span>
+            </div>
+            <buton onclick='nextpage()' type='button' class='login-btn' >LOGIN</buton>
+        </div>
+            <script>
+                function myFunction(){
+                    var x = document.getElementById("myInput");
+                    var y = document.getElementById("hide1");
+                    var z = document.getElementById("hide2");
+                    
+                    if(x.type === 'password'){
+                        x.type= 'text';
+                        y.style.display = 'block';
+                        z.style.display = 'none';
+                        
+                    }
+                    else{
+                        x.type= 'password';
+                        y.style.display = 'none';
+                        z.style.display = 'block';                       
+                    }
+                }
+
+            function nextpage()
+            {
+                var un = document.getElementById('email').value;
+                var pw = document.getElementById("myInput").value;
+                if(un=='123' && pw=='123')
+                    {
+                        window.location.href='./index.html';
+                    }
+                else{
+                    alert('Inwalid UserName and Password');
+                }
+            }
+
+        </script>
+
+    </body>
+</html>

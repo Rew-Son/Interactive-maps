@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!-- ===== CSS ===== -->
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+        <link 
+        rel="stylesheet" 
+        href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.draw/1.0.4/leaflet.draw.css"/>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css">
+        <title>Design Viewer </title>
+        <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+     
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="./L.Geoserver.js"></script>
+      
+         <!-- ===== draw ===== -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.draw/1.0.0/leaflet.draw.js"></script>
+       <script src="https://cdn.jsdelivr.net/npm/notiflix@3.2.2/dist/notiflix-notify-aio-3.2.2.min.js"></script>
+        <!-- ===== locate ===== -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet.locatecontrol@v0.74.0/dist/L.Control.Locate.min.css" />
+        <script src="https://cdn.jsdelivr.net/npm/leaflet.locatecontrol@v0.74.0/dist/L.Control.Locate.min.js" charset="utf-8"></script>
+        <!-- ===== Geojson ===== -->
+        <script src="./dane_GEOJSON/granice_miast.js"></script>
+        <script src="./dane_GEOJSON/nazwy_geograf.js"></script>
+        <script src="./dane_GEOJSON/place.js"></script>
+        <script src="./dane_GEOJSON/ulice.js"></script>
+
+    </head>
+    <body id="body-pd">
+        <div class="l-navbar" id="navbar">
+            <nav class="nav">
+                <div>
+                    <div class="nav__brand">
+                        <ion-icon name="menu-outline" class="nav__toggle" id="nav-toggle"></ion-icon>
+                        <a href="#" class="nav__logo">Menu</a>
+                    </div>
+                    <div class="nav__list">
+                        <a href="index.html" class="nav__link active">
+                            <ion-icon name="home-outline" class="nav__icon"></ion-icon>
+                            <span class="nav__name">Home</span>
+                        </a>
+                        <a href="" class="nav__link">
+                            <ion-icon name="chatbubbles-outline" class="nav__icon"></ion-icon>
+                            <span class="nav__name">Contact</span>
+                        </a>
+
+                            <div  class="nav__link collapse">
+                            <ion-icon name="cloud-download" class="nav__icon"></ion-icon>
+                            <span class="nav__name">Downolad</span>
+                            <ion-icon name="chevron-down-outline" class="collapse__link"></ion-icon>
+
+                                 <ul class="collapse__menu2">
+                                    <div class="nav__link2 collapse2">
+                                        <span class="nav__name">Images</span>
+                                        <ion-icon name="chevron-down-outline" class="collapse__link"></ion-icon> 
+                                                <ul class="collapse__menu2">
+                                                      <a href=""  class="collapse__sublink2">test 1</a>
+                                                      <a href="" class="collapse__sublink2">test 2</a>
+                                                </ul>
+                                        </div>
+                                     <div class="nav__link2 collapse2">
+                                        <span class="nav__name">Images 2</span>
+                                         <ion-icon name="chevron-down-outline" class="collapse__link"></ion-icon>
+                                            <ul class="collapse__menu2">
+                                                  <a href="" class="collapse__sublink2">test 1</a>
+                                                  <a href="" class="collapse__sublink2">test 2</a>
+                                            </ul>
+                                     </div>
+                                     <div class="nav__link2 collapse2">
+                                        <span class="nav__name">Raport</span>
+                                        <ion-icon name="chevron-down-outline" class="collapse__link"></ion-icon>
+                                         <ul class="collapse__menu2">
+                                              <a href="" class="collapse__sublink2">test 1</a>
+                                              <a href="" class="collapse__sublink2">test 2</a>
+                                            </ul>
+                                     </div>
+                                </ul>
+                        </div>
+
+                        <a href="#" class="nav__link" onclick="compareFunction()">
+                            <ion-icon name="code" class="nav__icon"></ion-icon>
+                            <span class="nav__name" >Porównanie mapy</span>
+                        </a>
+                         <a href="#" class="nav__link" onclick="sitesFunction()">
+                            <ion-icon name="locate" class="nav__icon"></ion-icon>
+                            <span class="nav__name" >Kluczowe miejsca</span>
+                       
+                        <div id="toolbar">
+                                    <div id="tourstops">
+                                          <h2>Kluczowe miejsca</h2>
+                                          <ul>
+                                          </ul>
+                                    </div>
+                                </div>
+                              </a>
+                        
+            
+                        
+                        
+                        
+                        <a href="#" class="nav__link">
+                            <ion-icon name="settings-outline" class="nav__icon"></ion-icon>
+                            <span class="nav__name">Settings</span>
+                        </a>
+                    </div>
+                </div>
+                <a href="login_page.html" class="nav__link">
+                    <ion-icon name="log-out-outline" class="nav__icon"></ion-icon>
+                    <span class="nav__name">Log Out</span>
+                </a>
+            </nav>
+        </div>
+
+            <h1>INTERACTIVE MAP</h1>
+            <h2>RZESZOW</h2> 
+
+        <div id="map">
+        <div id="leafletmap"> </div> 
+        </div>
+        <!-- ===== IONICONS ===== -->
+       <!-- <script src="https://unpkg.com/ionicons@5.1.2/dist/ionicons.js"></script>-->
+        <script type="module" src="https://unpkg.com/ionicons@5.1.2/dist/ionicons/ionicons.esm.js"></script>
+        <script nomodule="" src="https://unpkg.com/ionicons@5.1.2/dist/ionicons/ionicons.js"></script>
+    
+            <!-- leaflet js link  -->
+        <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+         <!-- leaflet side by side  -->
+        <script src="./lib/leaflet-side-by-side.min.js"></script>
+        <!-- leaflet geojson vt  -->
+        <script src="https://unpkg.com/geojson-vt@3.2.0/geojson-vt.js"></script>
+        <script src="leaflet-geojson-vt.js"></script>
+        <script src='./lib/leaflet.browser.print.min.js'></script>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-easybutton@2/src/easy-button.css">
+        <script src="https://cdn.jsdelivr.net/npm/leaflet-easybutton@2/src/easy-button.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.draw/1.0.4/leaflet.draw.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/notiflix@3.2.2/dist/notiflix-notify-aio-3.2.2.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/leaflet.locatecontrol@0.74.0/dist/L.Control.Locate.min.js" charset="utf-8"></script>
+          <script src="./lib/L.TileLayer.BetterWMS.js"></script>
+        <!-- ===== MAIN JS ===== -->
+        
+        <script src="script.js"></script>
+        <script src="main.js"></script>
+        <div class="marker-position">Click on map</div>
+        
+         <!-- ===== geojson draw and download ===== -->
+           <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+      <symbol id="icon-export" viewBox="0 0 24 24">
+        <path d="M0 12c0 6.627 5.373 12 12 12s12-5.373 12-12S18.627 0 12 0 0 5.373 0 12zm17-1h-4v8h-2v-8H7l5-6 5 6z" />
+      </symbol>
+      <symbol id="icon-add" viewBox="0 0 24 24">
+        <path
+          d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm6 13h-5v5h-2v-5H6v-2h5V6h2v5h5v2z" />
+      </symbol>
+      <symbol id="icon-remove" viewBox="0 0 24 24">
+        <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm6 13H6v-2h12v2z" />
+      </symbol>
+      <symbol id="icon-import" viewBox="0 0 24 24">
+        <path d="M24 12c0-6.627-5.373-12-12-12S0 5.373 0 12s5.373 12 12 12 12-5.373 12-12zM7 13h4V5h2v8h4l-5 6-5-6z" />
+      </symbol>
+    </svg>
+
+    </body>
+</html>

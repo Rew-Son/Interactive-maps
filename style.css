@@ -1,0 +1,382 @@
+/*===== GOOGLE FONTS =====*/
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap");
+
+/*===== VARIABLES CSS =====*/
+:root{
+  --nav-width: 92px;
+
+  /*===== Colores =====*/
+  --first-color: #00adb5;
+  --bg-color: #222831;
+  --sub-color: #00fff5;
+  --white-color: #FFF;
+  
+  /*===== Fuente y tipografia =====*/
+  --body-font: 'Poppins', sans-serif;
+  --normal-font-size: 1rem;
+  --small-font-size: .875rem;
+  
+  /*===== z index =====*/
+  --z-fixed: 10000;
+}
+
+
+/*===== BASE =====*/
+*,::before,::after{
+  box-sizing: border-box;
+}
+body{
+  position: relative;
+  margin: 0;
+  padding: 1rem 0 0 6.75rem;
+  font-family: var(--body-font);
+  font-size: var(--normal-font-size);
+  transition: .5s;
+}
+
+h1{
+  margin: 0;
+ font-size: 1.5rem;
+    
+}
+h2{
+  margin: 0;
+  font-size:var(--normal-font-size);
+}
+ul{
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+a{
+  text-decoration: none;
+}
+ul ul a{
+  list-style: none;
+ color: var(--bg-color);
+}
+
+/*===== l NAV =====*/
+.l-navbar{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: var(--nav-width);
+  height: 100vh;
+  background-color: var(--bg-color);
+  color: var(--white-color);
+  padding: 1.5rem 1.5rem 2rem;
+  transition: .5s;
+  z-index: var(--z-fixed);
+}
+
+/*===== NAV =====*/
+.nav{
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+}
+.nav__brand{
+  display: grid;
+  grid-template-columns: max-content max-content;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+.nav__toggle{
+  font-size: 1.25rem;
+  padding: .75rem;
+  cursor: pointer;
+}
+.nav__logo{
+  color: var(--white-color);
+  font-weight: 600;
+}
+
+.nav__link{
+  display: grid;
+  grid-template-columns: max-content max-content;
+  align-items: center;
+  column-gap: .75rem;
+  padding: .75rem;
+  color: var(--white-color);
+  border-radius: .5rem;
+  margin-bottom: 1rem;
+  transition: .3s;
+  cursor: pointer;
+}
+.nav__link2{
+  display: grid;
+  column-gap: .5rem;
+  padding: .65rem;
+  color: var(--white-color);
+  border-radius: .25rem;
+  margin-bottom: 1rem;
+  transition: .3s;
+  cursor: pointer;
+}
+
+.nav__link:hover{
+  background-color: var(--first-color);
+}
+.nav__link2:hover{
+  background-color: var(--first-color);
+}
+
+.nav__icon{
+  font-size: 1.25rem;
+}
+.nav__name{
+  font-size: var(--small-font-size);
+}
+
+/*Expander menu*/
+.expander{
+  width: calc(var(--nav-width) + 9.25rem);
+}
+
+/*Add padding body*/
+.body-pd{
+  padding: 1rem 0 0 16rem;
+}
+
+/*Active links menu*/
+.active{
+  background-color: var(--first-color);
+}
+
+/*===== COLLAPSE =====*/
+.collapse{
+  grid-template-columns: 20px max-content 1fr;
+}
+.collapse2{
+  grid-template-columns:  max-content 1fr;
+}
+.collapse__link{
+  justify-self: flex-end;
+  transition: .5s;
+}
+.collapse__link2{
+  justify-self: flex-end;
+  transition: .5s;
+}
+
+.collapse__menu{
+  display: none;
+  padding: .75rem 2.25rem;
+}
+.collapse__menu2{
+  display: none;
+  padding: .25rem .25rem;
+
+}
+.collapse__sublink{
+  color: var(--sub-color);
+  font-size: var(--small-font-size);
+}
+.collapse__sublink2{
+    display: block;
+  color: var(--sub-color);
+  font-size: var(--small-font-size);
+}
+
+.collapse__sublink:hover{
+  color: var(--white-color);
+}
+.collapse__sublink2:hover{
+  color: var(--white-color);
+}
+
+/*Show collapse*/
+.showCollapse{
+  display: block;
+}
+/*Rotate icon*/
+.rotate{
+  transform: rotate(180deg);
+}
+
+
+#map {
+          width: 100%;
+          height: calc(100vh - 76px);
+          overflow: hidden;
+}
+#leafletmap {
+              width: 100%;
+              height: calc(100vh - 76px);
+             }
+.leaflet-tooltip.my-labels {
+    background-color: transparent;
+    border: transparent;
+    box-shadow: none;
+    font-size: 15px;
+    color: #0000ff;
+    }
+.leaflet-tooltip.dzialki {
+    background-color: transparent;
+    border: transparent;
+    box-shadow: none;
+    font-size: 10px;
+    }
+.icon-gaz{
+    font-size: 1.75rem;
+    color: yellow
+}
+
+.marker-position {
+  position: absolute;
+  border-radius: 5px;
+  bottom: 0;
+  right: 0;
+  z-index: 999;
+  padding: 10px;
+  font-weight: 700;
+  color: #1e3a8a;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+.leaflet-control-attribution.leaflet-control{
+    display: none;
+}
+/* **************************************************************************************************************************************/
+/* kilometraz */
+
+#toolbar {
+  background: rgba(255, 255, 255, 1);
+  opacity: .6;
+  width: 200px;
+  height: 100vh;
+  position: absolute;
+  left: -200px;
+  z-index: 1;
+  transition: .5s left;
+  padding: 20px;
+  box-sizing: border-box;
+    top:0;
+}
+
+#toolbar.open {
+  left: 0;
+    top:0;
+  opacity: .95;
+    height: 100vh;
+}
+
+
+#tourstops {
+  overflow-y: scroll;
+  max-height: 95vh;
+}
+
+#toolbar ul {
+  margin: 0;
+  padding: 0;
+}
+
+#toolbar li {
+  list-style-type: none;
+  border-bottom: 1px solid #ccc;
+  padding: 6px 3px;
+  cursor: pointer;
+   color: var(--bg-color);
+}
+
+#toolbar li:hover {
+  color: var(--sub-color);
+}
+
+.notify-icon span{
+  display: inline-block;
+  border: 1px solid orange;
+  border-radius: 50%;
+  height: 24px; 
+  width: 24px;
+  animation: pulse .6s 4 forwards;
+  transform-origin: center center;
+}
+@keyframes pulse{
+  0%{
+    transform: scale(5.5);
+    opacity: .2;
+  }
+  50%{
+    opacity: .8;
+  }
+  100%{
+    transform: scale(.1);
+    opacity: 1;
+  }
+}
+
+
+/* **************************************************************************************************************************************/
+/* draw and download geojsno*/
+
+.link-button label {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+  width: 110%;
+}
+
+.leaflet-touch .link-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 34px;
+  height: 34px;
+  background: #fff;
+  margin-bottom: 5px;
+  padding: 5px;
+}
+
+.link-button:hover {
+  background-color: #f4f4f4;
+  fill: #a200ff;
+}
+
+.link-button:hover:after {
+  position: absolute;
+  display: flex;
+  justify-content: end;
+  content: attr(title);
+  right: 40px;
+  width: auto;
+  white-space: nowrap;
+  background: #fff;
+  padding: 5px;
+}
+
+.geojson {
+  display: none;
+}
+
+input[type="file"] {
+  font-size: 0;
+}
+::file-selector-button {
+  font-size: initial;
+}
+
+.icon-geojson {
+  width: 25px;
+  height: 25px;
+}
+
+/************
+/*działka numer*/
+.leaflet-popup-content-wrapper {
+    border-radius: 0%;
+}
+
+.leaflet-popup-close-button {
+    color: red;
+    margin: 3%;
+    position: relative;
+}
+

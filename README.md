@@ -7,7 +7,7 @@ The interactive map is created on the basis of the leflet library. The area of a
 * [View of raster and vector data](#View-of-raster-and-vector-data)
 * [Geolocation](#Geolocation)
 * [Comparison of raster data](#Comparison-of-raster-data)
-* [Location of key sites] (#Location-of-key-sites)
+* [Location of key sites](#Location-of-key-sites)
 * [Visualization of deep information](#Visualization-of-deep-information)
 * [Printing a map report](#Printing-a-map-report)
 * [Drawing polygons/points/lines](#Drawing-polygons/points/lines)
@@ -15,10 +15,12 @@ The interactive map is created on the basis of the leflet library. The area of a
 
 
 ## Login page
-![Video_22-11-03_13-38-24 (Małe)](https://user-images.githubusercontent.com/71393344/199722892-20bc7090-9574-4018-8e52-e487ad23df8b.gif)
+![Video_22-11-03_14-46-03 (Małe)](https://user-images.githubusercontent.com/71393344/199737766-eded5b36-4ed4-474c-a0bc-e8cd6135adfc.gif)
+
 
 ## Menu
 ![Video_22-11-03_14-00-00 (Małe)](https://user-images.githubusercontent.com/71393344/199727015-b4a50889-ee1f-4481-9864-e7346a09c455.gif)
+
 
 ## View of raster and vector data
 ## Geolocation

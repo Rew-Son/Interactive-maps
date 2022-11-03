@@ -2,7 +2,7 @@
 The interactive map is created on the basis of the leflet library. The area of application is Rzeszow (southern Poland). The tested application was designed based on open source data from geoportal.gov.pl, google maps and open street maps. 
 
 ## Table of contents
-* [Login page]
+* [Login page](#Login-page)
 * [Menu]
 * [View of raster and vector data]
 * [Geolocation]

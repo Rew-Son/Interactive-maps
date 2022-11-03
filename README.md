@@ -23,6 +23,8 @@ The interactive map is created on the basis of the leflet library. The area of a
 
 
 ## View of raster and vector data
+![image](https://user-images.githubusercontent.com/71393344/199738639-4ac8ddb2-238c-44c3-aeb5-912ed1e91bb9.png)
+
 ## Geolocation
 ## Comparison of raster data
 ## Location of key sites

@@ -17,15 +17,15 @@ The interactive map is created on the basis of the leflet library. The area of a
 ## Login page
 ![Video_22-11-03_14-46-03 (Małe)](https://user-images.githubusercontent.com/71393344/199737766-eded5b36-4ed4-474c-a0bc-e8cd6135adfc.gif)
 
-
 ## Menu
 ![Video_22-11-03_14-00-00 (Małe)](https://user-images.githubusercontent.com/71393344/199727015-b4a50889-ee1f-4481-9864-e7346a09c455.gif)
 
-
 ## View of raster and vector data
-![image](https://user-images.githubusercontent.com/71393344/199738639-4ac8ddb2-238c-44c3-aeb5-912ed1e91bb9.png)
+![tempsnip](https://user-images.githubusercontent.com/71393344/199738965-22530935-374a-40e5-8e9d-e806555aab34.png)
 
 ## Geolocation
+![Bez nazwy](https://user-images.githubusercontent.com/71393344/199740348-4af94095-8bb0-491d-ac91-77932afb4105.png)
+
 ## Comparison of raster data
 ## Location of key sites
 ## Visualization of deep information

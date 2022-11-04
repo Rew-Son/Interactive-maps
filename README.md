@@ -11,7 +11,7 @@ The interactive map is created on the basis of the leflet library. The area of a
 * [Visualization of deep information](#Visualization-of-deep-information)
 * [Printing a map report](#Printing-a-map-report)
 * [Drawing polygons/points/lines](#Drawing-polygons/points/lines)
-* [Import/Eksport geojson files](#Import/Eksport-geojson files)
+* [Import/Eksport geojson files](#Import/Eksport-geojson-files)
 
 
 ## Login page

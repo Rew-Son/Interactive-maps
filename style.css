@@ -20,7 +20,6 @@
   --z-fixed: 10000;
 }
 
-
 /*===== BASE =====*/
 *,::before,::after{
   box-sizing: border-box;
@@ -36,7 +35,7 @@ body{
 
 h1{
   margin: 0;
- font-size: 1.5rem;
+  font-size: 1.5rem;
     
 }
 h2{
@@ -198,7 +197,6 @@ ul ul a{
   transform: rotate(180deg);
 }
 
-
 #map {
           width: 100%;
           height: calc(100vh - 76px);
@@ -254,7 +252,7 @@ ul ul a{
   transition: .5s left;
   padding: 20px;
   box-sizing: border-box;
-    top:0;
+  top:0;
 }
 
 #toolbar.open {
@@ -263,7 +261,6 @@ ul ul a{
   opacity: .95;
     height: 100vh;
 }
-
 
 #tourstops {
   overflow-y: scroll;
@@ -309,7 +306,6 @@ ul ul a{
     opacity: 1;
   }
 }
-
 
 /* **************************************************************************************************************************************/
 /* draw and download geojsno*/

@@ -106,10 +106,7 @@ var nazwy_geo = L.geoJSON(nazwy_geograf, {
 }).addTo(map);
 
 
-
-
-
-// layer controller
+// layer controller/////////////////////////////////////////////////////////////////////////////////////////////////////
 var baseMaps = {
     "Google Satellite": googleSat,
     "OSM": osm,
@@ -125,17 +122,17 @@ var overlayMaps = {
 var layerControl = L.control.layers(baseMaps, overlayMaps).addTo(map);
 
 
-/// COORDINATE
+/// COORDINATE////////////////////////////////////////////////////////////////////////////////////////////////////////
 // obtaining coordinates after clicking on the map
 map.on("click", function (e) {
   const markerPlace = document.querySelector(".marker-position");
   markerPlace.textContent = e.latlng;
 });
 
-///PRINT
+///PRINT///////////////////////////////////////////////////////////////////////////////////////////////////////////////
 var browserControl = L.control.browserPrint({position: 'topleft', title: 'Design Viewer | OPGK Rzeszów'}).addTo(map);
 
-//SIDE TO SIDE
+//SIDE TO SIDE///////////////////////////////////////////////////////////////////////////////////////////////////////
 
 var compareFunction = (function() {
     var executed = false;
@@ -160,7 +157,7 @@ var compareFunction = (function() {
     };
 })();
 
-//////*****KEY SITES
+//////*****KEY SITES//////////////////////////////////////////////////////////////////////////////////////////
 
 
 var sitesFunction = (function () {
@@ -206,7 +203,7 @@ L.geoJson(nazwy_geograf, {
     });
 
 
-//////////////// DRAW
+//////////////// DRAW///////////////////////////////////////////////////////////////////////////////////////////////
 
 // --------------------------------------------------
 // Nofiflix options
@@ -372,7 +369,7 @@ removeJSON.addEventListener("click", (e) => {
   });
 });
 
-// --------------------------------------------------
+// ------------------------------------------------------------------------------------------------------
 // load geojson from localstorage
 
 const geojsonFromLocalStorage = JSON.parse(localStorage.getItem("geojson"));
@@ -416,7 +413,7 @@ if (geojsonFromLocalStorage) {
   setGeojsonToMap(geojsonFromLocalStorage);
 }
 
-// --------------------------------------------------
+// ------------------------------------------------------------------------------------------------------------
 // get geojson from file
 
 function openFile(event) {

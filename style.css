@@ -239,7 +239,7 @@ ul ul a{
     display: none;
 }
 /* **************************************************************************************************************************************/
-/* kilometraz */
+/* key sites*/
 
 #toolbar {
   background: rgba(255, 255, 255, 1);
@@ -293,6 +293,7 @@ ul ul a{
   animation: pulse .6s 4 forwards;
   transform-origin: center center;
 }
+
 @keyframes pulse{
   0%{
     transform: scale(5.5);
